@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BIG DATA SERVICE, SA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#020617;
+color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 70px;
+position:fixed;
+width:100%;
+background:rgba(2,6,23,0.7);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+nav a{
+margin-left:35px;
+text-decoration:none;
+color:#cbd5f5;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{color:#38bdf8;}
+
+.logo{
+font-weight:700;
+color:#38bdf8;
+font-size:20px;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px;
+animation:fadeIn 1.5s ease;
+}
+
+.hero h1{
+font-size:3.5rem;
+margin-bottom:20px;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+color:#94a3b8;
+font-size:1.2rem;
+max-width:700px;
+margin-bottom:40px;
+}
+
+.btn{
+background:linear-gradient(90deg,#0ea5e9,#38bdf8);
+padding:16px 40px;
+border-radius:12px;
+border:none;
+font-weight:600;
+cursor:pointer;
+color:#020617;
+transition:0.3s;
+}
+
+.btn:hover{transform:scale(1.05);}
+
+/* SECTIONS */
+.section{
+padding:100px 80px;
+animation:fadeUp 1s ease;
+}
+
+.section h2{
+font-size:2.5rem;
+margin-bottom:40px;
+color:#38bdf8;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(30,58,138,0.35);
+padding:30px;
+border-radius:16px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-12px);
+background:rgba(30,58,138,0.6);
+}
+
+/* TECH */
+.tech{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.tech span{
+background:#0f172a;
+padding:14px 22px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+/* STATS */
+.stats{
+display:flex;
+justify-content:center;
+gap:80px;
+flex-wrap:wrap;
+text-align:center;
+}
+
+.stat h3{
+font-size:3rem;
+color:#38bdf8;
+}
+
+/* CONTACT */
+.contact{text-align:center;}
+.contact p{margin:8px 0;color:#cbd5f5;}
+
+/* FORM */
+input,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border:none;
+border-radius:10px;
+background:rgba(255,255,255,0.1);
+color:white;
+outline:none;
+}
+
+textarea{height:120px;resize:none;}
+
+.form-btn{
+background:#22c55e;
+padding:12px;
+width:100%;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:16px 18px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.hero h1{font-size:2.4rem;}
+.section{padding:70px 25px;}
+nav{padding:15px 25px;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
+<nav>
+<div class="logo">BIG DATA SERVICE</div>
+<div>
+<a href="#sobre">Sobre</a>
+<a href="#servicos">Serviços</a>
+<a href="#tecnologia">Tecnologias</a>
+<a href="#apoio">Apoio</a>
+<a href="#contacto">Contacto</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+<h1 id="title">Transformamos Dados em Decisões Inteligentes</h1>
+
+<p id="desc">
+Soluções avançadas em ciência de dados, estatística e inteligência analítica.
+</p>
+
+<button class="btn" onclick="window.open('https://wa.me/258849570779')">
+Falar no WhatsApp
+</button>
+
+</section>
+
+<!-- SOBRE -->
+<section class="section" id="sobre">
+<h2>Sobre Nós</h2>
+<p style="text-align:center;max-width:800px;margin:auto;color:#cbd5f5;">
+A BIG DATA SERVICE, SA é especializada em ciência de dados, estatística e investigação científica em Moçambique.
+</p>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="section" id="servicos">
+
+<h2>Serviços</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Estudantes</h3>
+<p>Metodologia, análise de dados e apoio académico completo.</p>
+</div>
+
+<div class="card">
+<h3>Investigadores</h3>
+<p>Estatística avançada e publicação científica.</p>
+</div>
+
+<div class="card">
+<h3>Instituições</h3>
+<p>Dashboards e análise estratégica.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TECNOLOGIA -->
+<section class="section" id="tecnologia">
+<h2>Tecnologias</h2>
+
+<div class="tech">
+<span>SPSS</span>
+<span>R</span>
+<span>Power BI</span>
+<span>Tableau</span>
+<span>Excel Avançado</span>
+</div>
+
+</section>
+
+<!-- APOIO + FORM -->
+<section class="section" id="apoio">
+
+<h2>Apoie a Pesquisa Científica</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<p>
+Apoiamos estudantes e investigadores em Moçambique.
+Contribuições a partir de 1 MT via M-Pesa ajudam a ciência no país.
+</p>
+
+<button class="btn" onclick="window.open('tel:+258849570779')">
+💸 Apoiar via M-Pesa
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Pedido de Cotação</h3>
+
+<input id="name" placeholder="Nome">
+<input id="email" placeholder="Email">
+<textarea id="project" placeholder="Descreva o seu projeto"></textarea>
+
+<button class="form-btn" onclick="sendForm()">Enviar</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contacto">
+
+<h2>Contacto</h2>
+
+<p>📞 +258 84 957 0779</p>
+<p>📧 bigdataservice.mz@gmail.com</p>
+<p>📍 Maputo, Moçambique</p>
+
+</section>
+
+<footer style="text-align:center;padding:40px;color:#64748b;">
+© 2026 BIG DATA SERVICE, SA
+</footer>
+
+<a class="whatsapp" href="https://wa.me/258849570779">💬</a>
+
+<script>
+
+/* PARTICLES */
+const canvas=document.getElementById("particles")
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let particles=[]
+
+for(let i=0;i<100;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+dx:(Math.random()-0.5),
+dy:(Math.random()-0.5)
+})
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+particles.forEach(p=>{
+ctx.beginPath()
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2)
+ctx.fillStyle="#38bdf8"
+ctx.fill()
+
+p.x+=p.dx
+p.y+=p.dy
+})
+
+requestAnimationFrame(draw)
+}
+
+draw()
+
+/* FORM SEND */
+function sendForm(){
+
+const name=document.getElementById("name").value
+const email=document.getElementById("email").value
+const project=document.getElementById("project").value
+
+const msg=`Pedido de Cotação:
+Nome: ${name}
+Email: ${email}
+Projeto: ${project}`
+
+// WhatsApp
+window.open("https://wa.me/258849570779?text="+encodeURIComponent(msg))
+
+// Email
+window.location.href="mailto:bigdataservice.mz@gmail.com?subject=Cotação&body="+encodeURIComponent(msg)
+}
+
+</script>
+
+</body>
+</html>
