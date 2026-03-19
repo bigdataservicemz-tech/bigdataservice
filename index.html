@@ -59,6 +59,21 @@ color:#38bdf8;
 font-size:20px;
 }
 
+/* BOTÃO IDIOMA */
+.lang-btn{
+margin-left:20px;
+padding:8px 14px;
+border:none;
+border-radius:8px;
+background:#38bdf8;
+color:#020617;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.lang-btn:hover{transform:scale(1.05);}
+
 /* HERO */
 .hero{
 height:100vh;
@@ -77,6 +92,8 @@ margin-bottom:20px;
 background:linear-gradient(90deg,#38bdf8,#0ea5e9);
 -webkit-background-clip:text;
 color:transparent;
+letter-spacing:1px;
+line-height:1.2;
 }
 
 .hero p{
@@ -86,6 +103,7 @@ max-width:700px;
 margin-bottom:40px;
 }
 
+/* BOTÃO */
 .btn{
 background:linear-gradient(90deg,#0ea5e9,#38bdf8);
 padding:16px 40px;
@@ -112,6 +130,12 @@ color:#38bdf8;
 text-align:center;
 }
 
+.section p{
+font-size:1.05rem;
+line-height:1.7;
+}
+
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -145,20 +169,6 @@ border-radius:10px;
 border:1px solid rgba(255,255,255,0.08);
 }
 
-/* STATS */
-.stats{
-display:flex;
-justify-content:center;
-gap:80px;
-flex-wrap:wrap;
-text-align:center;
-}
-
-.stat h3{
-font-size:3rem;
-color:#38bdf8;
-}
-
 /* CONTACT */
 .contact{text-align:center;}
 .contact p{margin:8px 0;color:#cbd5f5;}
@@ -188,7 +198,7 @@ cursor:pointer;
 font-weight:bold;
 }
 
-/* WHATSAPP FLOAT */
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:25px;
@@ -236,15 +246,23 @@ nav{padding:15px 25px;}
 <a href="#tecnologia">Tecnologias</a>
 <a href="#apoio">Apoio</a>
 <a href="#contacto">Contacto</a>
+
+<button class="lang-btn" onclick="toggleLang()">EN</button>
 </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
 
-<h1 id="title">Transformamos Dados em Decisões Inteligentes</h1>
+<h1 id="title"
+data-pt="Transformamos Dados em Decisões Inteligentes"
+data-en="We Transform Data into Intelligent Decisions">
+Transformamos Dados em Decisões Inteligentes
+</h1>
 
-<p id="desc">
+<p id="desc"
+data-pt="Soluções avançadas em ciência de dados, estatística e inteligência analítica."
+data-en="Advanced solutions in data science, statistics and analytical intelligence.">
 Soluções avançadas em ciência de dados, estatística e inteligência analítica.
 </p>
 
@@ -256,32 +274,58 @@ Falar no WhatsApp
 
 <!-- SOBRE -->
 <section class="section" id="sobre">
-<h2>Sobre Nós</h2>
-<p style="text-align:center;max-width:800px;margin:auto;color:#cbd5f5;">
-A BIG DATA SERVICE, SA é especializada em ciência de dados, estatística e investigação científica em Moçambique.
+<h2 data-pt="Sobre Nós" data-en="About Us">Sobre Nós</h2>
+
+<p data-pt="A BIG DATA SERVICE, SA é uma empresa especializada em ciência de dados & análise estatística , dedicada a transformar dados em conhecimento estratégico para a tomada de decisão."
+data-en="BIG DATA SERVICE, SA is a company specialized in data science and statistical analysis, dedicated to transforming data into strategic knowledge for decision-making.">
+A BIG DATA SERVICE, SA é uma empresa especializada em ciência de dados &
+análise estatística , dedicada a transformar dados em
+conhecimento estratégico para a tomada de decisão.
 </p>
+
+<p data-pt="Fundada em 2017 por Basílio Viriato Cumbane, apoiamos instituições, investigadores e estudantes em todas as fases da pesquisa científica."
+data-en="Founded in 2017 by Basílio Viriato Cumbane, we support institutions, researchers and students in all phases of scientific research.">
+Fundada em 2017 por <strong>Basílio Viriato Cumbane</strong>, apoiamos instituições,
+investigadores e estudantes em todas as fases da pesquisa científica.
+</p>
+
+<p class="slogan"
+data-pt="Somos uma empresa jovem, focada na juventude e na inovação."
+data-en="We are a young company focused on youth and innovation.">
+Somos uma empresa jovem, focada na juventude e na inovação.
+</p>
+
 </section>
 
 <!-- SERVIÇOS -->
 <section class="section" id="servicos">
 
-<h2>Serviços</h2>
+<h2 data-pt="Serviços" data-en="Services">Serviços</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>Estudantes</h3>
-<p>Metodologia, análise de dados e apoio académico completo.</p>
+<h3 data-pt="Estudantes" data-en="Students">Estudantes</h3>
+<p data-pt="Metodologia, análise de dados e apoio académico completo."
+data-en="Methodology, data analysis and full academic support.">
+Metodologia, análise de dados e apoio académico completo.
+</p>
 </div>
 
 <div class="card">
-<h3>Investigadores</h3>
-<p>Estatística avançada e publicação científica.</p>
+<h3 data-pt="Investigadores" data-en="Researchers">Investigadores</h3>
+<p data-pt="Estatística avançada e publicação científica."
+data-en="Advanced statistics and scientific publication.">
+Estatística avançada e publicação científica.
+</p>
 </div>
 
 <div class="card">
-<h3>Instituições</h3>
-<p>Dashboards e análise estratégica.</p>
+<h3 data-pt="Instituições" data-en="Institutions">Instituições</h3>
+<p data-pt="Dashboards e análise estratégica."
+data-en="Dashboards and strategic analysis.">
+Dashboards e análise estratégica.
+</p>
 </div>
 
 </div>
@@ -290,7 +334,7 @@ A BIG DATA SERVICE, SA é especializada em ciência de dados, estatística e inv
 
 <!-- TECNOLOGIA -->
 <section class="section" id="tecnologia">
-<h2>Tecnologias</h2>
+<h2 data-pt="Tecnologias" data-en="Technologies">Tecnologias</h2>
 
 <div class="tech">
 <span>SPSS</span>
@@ -302,18 +346,25 @@ A BIG DATA SERVICE, SA é especializada em ciência de dados, estatística e inv
 
 </section>
 
-<!-- APOIO + FORM -->
+<!-- APOIO -->
 <section class="section" id="apoio">
 
-<h2>Apoie a Pesquisa Científica</h2>
+<h2 data-pt="Apoie a Pesquisa Científica" data-en="Support Scientific Research">
+Apoie a Pesquisa Científica
+</h2>
 
 <div class="grid">
 
 <div class="card">
 
-<p>
-Apoiamos estudantes e investigadores em Moçambique.
-Contribuições a partir de 1 MT via M-Pesa ajudam a ciência no país.
+<p data-pt="Apoiar a BIG DATA SERVICE, SA é investir no futuro da ciência em Moçambique..."
+data-en="Supporting BIG DATA SERVICE, SA is investing in the future of science in Mozambique...">
+Apoiar a BIG DATA SERVICE, SA é investir no futuro da ciência em Moçambique.
+Cada contribuição significa mais oportunidades para estudantes e investigadores desenvolverem conhecimento, inovação e soluções para o país.
+
+Com apenas 1 MT via M-Pesa, estás a ajudar a fortalecer a pesquisa científica, impulsionar o talento moçambicano e construir uma cultura de excelência baseada em dados e evidência.
+
+Juntos, estamos a transformar ideias em impacto real para o desenvolvimento de Moçambique.
 </p>
 
 <button class="btn" onclick="window.open('tel:+258849570779')">
@@ -338,13 +389,15 @@ Contribuições a partir de 1 MT via M-Pesa ajudam a ciência no país.
 
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACTO -->
 <section class="section contact" id="contacto">
 
-<h2>Contacto</h2>
+<h2 data-pt="Contacto" data-en="Contact">Contacto</h2>
 
-<p>📞 +258 84 957 0779</p>
+<p>📞 +258 84 957 0779 - Basílio Cumbane</p>
+<p>📞 +258 84 601 8537 - Admiro Guambe</p>
 <p>📧 bigdataservice.mz@gmail.com</p>
+<p>📧 bazcumbane@gmail.com</p>
 <p>📍 Maputo, Moçambique</p>
 
 </section>
@@ -356,6 +409,20 @@ Contribuições a partir de 1 MT via M-Pesa ajudam a ciência no país.
 <a class="whatsapp" href="https://wa.me/258849570779">💬</a>
 
 <script>
+
+/* TRADUÇÃO */
+let currentLang = "pt";
+
+function toggleLang(){
+currentLang = currentLang === "pt" ? "en" : "pt";
+
+document.querySelectorAll("[data-pt]").forEach(el=>{
+el.textContent = el.getAttribute("data-" + currentLang);
+});
+
+document.querySelector(".lang-btn").textContent =
+currentLang === "pt" ? "EN" : "PT";
+}
 
 /* PARTICLES */
 const canvas=document.getElementById("particles")
@@ -394,7 +461,7 @@ requestAnimationFrame(draw)
 
 draw()
 
-/* FORM SEND */
+/* FORM */
 function sendForm(){
 
 const name=document.getElementById("name").value
@@ -406,10 +473,7 @@ Nome: ${name}
 Email: ${email}
 Projeto: ${project}`
 
-// WhatsApp
 window.open("https://wa.me/258849570779?text="+encodeURIComponent(msg))
-
-// Email
 window.location.href="mailto:bigdataservice.mz@gmail.com?subject=Cotação&body="+encodeURIComponent(msg)
 }
 
