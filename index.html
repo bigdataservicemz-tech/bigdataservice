@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,6 +20,8 @@ overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
+/* PARTICLES */
+
 #particles{
 position:fixed;
 top:0;
@@ -31,6 +32,7 @@ z-index:-1;
 }
 
 /* NAV */
+
 nav{
 display:flex;
 justify-content:space-between;
@@ -59,22 +61,8 @@ color:#38bdf8;
 font-size:20px;
 }
 
-/* BOTÃO IDIOMA */
-.lang-btn{
-margin-left:20px;
-padding:8px 14px;
-border:none;
-border-radius:8px;
-background:#38bdf8;
-color:#020617;
-cursor:pointer;
-font-weight:600;
-transition:0.3s;
-}
-
-.lang-btn:hover{transform:scale(1.05);}
-
 /* HERO */
+
 .hero{
 height:100vh;
 display:flex;
@@ -92,8 +80,6 @@ margin-bottom:20px;
 background:linear-gradient(90deg,#38bdf8,#0ea5e9);
 -webkit-background-clip:text;
 color:transparent;
-letter-spacing:1px;
-line-height:1.2;
 }
 
 .hero p{
@@ -103,7 +89,6 @@ max-width:700px;
 margin-bottom:40px;
 }
 
-/* BOTÃO */
 .btn{
 background:linear-gradient(90deg,#0ea5e9,#38bdf8);
 padding:16px 40px;
@@ -117,7 +102,8 @@ transition:0.3s;
 
 .btn:hover{transform:scale(1.05);}
 
-/* SECTIONS */
+/* SECTION */
+
 .section{
 padding:100px 80px;
 animation:fadeUp 1s ease;
@@ -130,12 +116,8 @@ color:#38bdf8;
 text-align:center;
 }
 
-.section p{
-font-size:1.05rem;
-line-height:1.7;
-}
-
 /* GRID */
+
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -154,51 +136,126 @@ transform:translateY(-12px);
 background:rgba(30,58,138,0.6);
 }
 
-/* TECH */
+/* GALERIA PROFISSIONAL */
+
+#galeria{
+background:#020617;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.gallery-card{
+position:relative;
+border-radius:16px;
+overflow:hidden;
+background:linear-gradient(145deg, rgba(30,58,138,0.25), rgba(2,6,23,0.8));
+box-shadow:0 0 25px rgba(56,189,248,0.1);
+transition:0.5s;
+}
+
+.gallery-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.7s;
+filter:brightness(0.9);
+}
+
+.gallery-card:hover{
+transform:translateY(-8px) scale(1.04);
+box-shadow:0 10px 35px rgba(56,189,248,0.25);
+}
+
+.gallery-card:hover img{
+transform:scale(1.2);
+filter:brightness(1);
+}
+
+.gallery-card::before{
+content:"";
+position:absolute;
+inset:0;
+border-radius:16px;
+padding:2px;
+background:linear-gradient(45deg,#38bdf8,#0ea5e9,#38bdf8,#0ea5e9);
+-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+-webkit-mask-composite:xor;
+mask-composite:exclude;
+opacity:0.5;
+animation:glowBorder 4s linear infinite;
+pointer-events:none;
+}
+
+@keyframes glowBorder{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* TECH CARDS */
+
 .tech{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:20px;
+gap:25px;
+perspective:1500px;
 }
 
-.tech span{
-background:#0f172a;
-padding:14px 22px;
-border-radius:10px;
-border:1px solid rgba(255,255,255,0.08);
+.tech-card{
+position:relative;
+width:140px;
+height:140px;
+border-radius:20px;
+background:linear-gradient(145deg, rgba(30,58,138,0.25), rgba(2,6,23,0.8));
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+cursor:pointer;
+transform-style: preserve-3d;
+overflow:hidden;
+}
+
+.tech-card img{
+width:50px;
+height:50px;
+object-fit:contain;
+filter:invert(1);
+}
+
+.tech-card p{
+margin-top:10px;
+font-size:0.9rem;
+font-weight:600;
+}
+
+.tech-card::before{
+content:"";
+position:absolute;
+inset:0;
+border-radius:20px;
+padding:2px;
+background:linear-gradient(45deg,#38bdf8,#0ea5e9,#38bdf8,#0ea5e9);
+-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+-webkit-mask-composite:xor;
+mask-composite:exclude;
+opacity:0.5;
+animation:glowBorder 3s linear infinite;
 }
 
 /* CONTACT */
+
 .contact{text-align:center;}
 .contact p{margin:8px 0;color:#cbd5f5;}
 
-/* FORM */
-input,textarea{
-width:100%;
-padding:12px;
-margin-top:10px;
-margin-bottom:15px;
-border:none;
-border-radius:10px;
-background:rgba(255,255,255,0.1);
-color:white;
-outline:none;
-}
-
-textarea{height:120px;resize:none;}
-
-.form-btn{
-background:#22c55e;
-padding:12px;
-width:100%;
-border:none;
-border-radius:10px;
-cursor:pointer;
-font-weight:bold;
-}
-
 /* WHATSAPP */
+
 .whatsapp{
 position:fixed;
 bottom:25px;
@@ -212,6 +269,7 @@ text-decoration:none;
 }
 
 /* ANIMATIONS */
+
 @keyframes fadeIn{
 from{opacity:0;transform:translateY(20px);}
 to{opacity:1;transform:translateY(0);}
@@ -222,262 +280,195 @@ from{opacity:0;transform:translateY(40px);}
 to{opacity:1;transform:translateY(0);}
 }
 
-/* MOBILE */
 @media(max-width:900px){
+
 .hero h1{font-size:2.4rem;}
 .section{padding:70px 25px;}
 nav{padding:15px 25px;}
+
 }
 
 </style>
-
 </head>
 
 <body>
 
 <canvas id="particles"></canvas>
 
-<!-- NAV -->
 <nav>
 <div class="logo">BIG DATA SERVICE</div>
+
 <div>
-<a href="#sobre">Sobre</a>
+<a href="#sobre">Sobre nós</a>
 <a href="#servicos">Serviços</a>
 <a href="#tecnologia">Tecnologias</a>
-<a href="#apoio">Apoio</a>
-<a href="#contacto">Contacto</a>
-
-<button class="lang-btn" onclick="toggleLang()">EN</button>
+<a href="#contacto">Contactos</a>
 </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
 
-<h1 id="title"
-data-pt="Transformamos Dados em Decisões Inteligentes"
-data-en="We Transform Data into Intelligent Decisions">
-Transformamos Dados em Decisões Inteligentes
-</h1>
+<h1>Transformamos Dados em Decisões Inteligentes</h1>
 
-<p id="desc"
-data-pt="Soluções avançadas em ciência de dados, estatística e inteligência analítica."
-data-en="Advanced solutions in data science, statistics and analytical intelligence.">
-Soluções avançadas em ciência de dados, estatística e inteligência analítica.
-</p>
+<p>Soluções avançadas em ciência de dados, estatística e inteligência analítica.</p>
 
 <button class="btn" onclick="window.open('https://wa.me/258849570779')">
-Falar no WhatsApp
+Falar com especialista no WhatsApp
 </button>
 
 </section>
 
-<!-- SOBRE -->
 <section class="section" id="sobre">
-<h2 data-pt="Sobre Nós" data-en="About Us">Sobre Nós</h2>
 
-<p data-pt="A BIG DATA SERVICE, SA é uma empresa especializada em ciência de dados & análise estatística , dedicada a transformar dados em conhecimento estratégico para a tomada de decisão."
-data-en="BIG DATA SERVICE, SA is a company specialized in data science and statistical analysis, dedicated to transforming data into strategic knowledge for decision-making.">
-A BIG DATA SERVICE, SA é uma empresa especializada em ciência de dados &
-análise estatística , dedicada a transformar dados em
-conhecimento estratégico para a tomada de decisão.
+<h2>Sobre Nós</h2>
+
+<p>
+A BIG DATA SERVICE, SA é uma empresa especializada em ciência de dados e análise estatística dedicada a transformar dados em conhecimento estratégico para tomada de decisão.
 </p>
 
-<p data-pt="Fundada em 2017 por Basílio Viriato Cumbane, apoiamos instituições, investigadores e estudantes em todas as fases da pesquisa científica."
-data-en="Founded in 2017 by Basílio Viriato Cumbane, we support institutions, researchers and students in all phases of scientific research.">
-Fundada em 2017 por <strong>Basílio Viriato Cumbane</strong>, apoiamos instituições,
-investigadores e estudantes em todas as fases da pesquisa científica.
+<p>
+Fundada em 2017 por <strong>Basílio Cumbane</strong>, apoiamos instituições, investigadores e estudantes em todas as fases da pesquisa científica.
 </p>
 
-<p class="slogan"
-data-pt="Somos uma empresa jovem, focada na juventude e na inovação."
-data-en="We are a young company focused on youth and innovation.">
-Somos uma empresa jovem, focada na juventude e na inovação.
-</p>
+<section id="galeria">
+
+<div class="gallery-grid">
+
+<div class="gallery-card">
+<img src="imagem1.png">
+</div>
+
+<div class="gallery-card">
+<img src="imagem2.jpg">
+</div>
+
+<div class="gallery-card">
+<img src="imagem3.jpg">
+</div>
+
+</div>
 
 </section>
 
-<!-- SERVIÇOS -->
+</section>
+
 <section class="section" id="servicos">
 
-<h2 data-pt="Serviços" data-en="Services">Serviços</h2>
+<h2>Serviços</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3 data-pt="Estudantes" data-en="Students">Estudantes</h3>
-<p data-pt="Metodologia, análise de dados e apoio académico completo."
-data-en="Methodology, data analysis and full academic support.">
-Metodologia, análise de dados e apoio académico completo.
-</p>
+<h3>Estudantes</h3>
+<p>Apoio na elaboração do Projecto de Pesquisa; Metodologia (Amostragem), análise de dados e escrita de Monografia.</p>
 </div>
 
 <div class="card">
-<h3 data-pt="Investigadores" data-en="Researchers">Investigadores</h3>
-<p data-pt="Estatística avançada e publicação científica."
-data-en="Advanced statistics and scientific publication.">
-Estatística avançada e publicação científica.
-</p>
+<h3>Investigadores</h3>
+<p>Apoio no desenho do Protocolo; Preparação dos materias para trabalho de campo, análise estatística de dados e publicação científica.</p>
 </div>
 
 <div class="card">
-<h3 data-pt="Instituições" data-en="Institutions">Instituições</h3>
-<p data-pt="Dashboards e análise estratégica."
-data-en="Dashboards and strategic analysis.">
-Dashboards e análise estratégica.
-</p>
+<h3>Instituições</h3>
+<p>Dashboards e análise de informação estratégica.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- TECNOLOGIA -->
 <section class="section" id="tecnologia">
-<h2 data-pt="Tecnologias" data-en="Technologies">Tecnologias</h2>
+
+<h2>Stack de Tecnologias</h2>
 
 <div class="tech">
-<span>SPSS</span>
-<span>R</span>
-<span>Power BI</span>
-<span>Tableau</span>
-<span>Excel Avançado</span>
-</div>
 
-</section>
+<div class="tech-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/ibm.svg"><p>SPSS</p></div>
+<div class="tech-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/r.svg"><p>R</p></div>
+<div class="tech-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/tableau.svg"><p>Tableau</p></div>
+<div class="tech-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/powerbi.svg"><p>Power BI</p></div>
+<div class="tech-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/qgis.svg"><p>QGIS</p></div>
+<div class="tech-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/esri.svg"><p>ArcMap</p></div>
+<div class="tech-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/googleearth.svg"><p>Google Earth</p></div>
+<div class="tech-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/microsoftexcel.svg"><p>Excel</p></div>
 
 <!-- APOIO -->
 <section class="section" id="apoio">
-
-<h2 data-pt="Apoie a Pesquisa Científica" data-en="Support Scientific Research">
-Apoie a Pesquisa Científica
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<p data-pt="Apoiar a BIG DATA SERVICE, SA é investir no futuro da ciência em Moçambique..."
-data-en="Supporting BIG DATA SERVICE, SA is investing in the future of science in Mozambique...">
-Apoiar a BIG DATA SERVICE, SA é investir no futuro da ciência em Moçambique.
-Cada contribuição significa mais oportunidades para estudantes e investigadores desenvolverem conhecimento, inovação e soluções para o país.
-
-Com apenas 1 MT via M-Pesa, estás a ajudar a fortalecer a pesquisa científica, impulsionar o talento moçambicano e construir uma cultura de excelência baseada em dados e evidência.
-
-Juntos, estamos a transformar ideias em impacto real para o desenvolvimento de Moçambique.
-</p>
-
-<button class="btn" onclick="window.open('tel:+258849570779')">
-💸 Apoiar via M-Pesa
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>Pedido de Cotação</h3>
-
-<input id="name" placeholder="Nome">
-<input id="email" placeholder="Email">
-<textarea id="project" placeholder="Descreva o seu projeto"></textarea>
-
-<button class="form-btn" onclick="sendForm()">Enviar</button>
-
-</div>
-
-</div>
-
+  <h2 data-pt="Apoie a Pesquisa Científica" data-en="Support Scientific Research">Apoie a Pesquisa Científica</h2>
+  <div class="grid">
+    <div class="card">
+      <p data-pt="Apoiar a BIG DATA SERVICE, SA é investir no futuro da ciência em Moçambique..." 
+         data-en="Supporting BIG DATA SERVICE, SA is investing in the future of science in Mozambique...">
+         Apoiar a BIG DATA SERVICE, SA é investir no futuro da ciência em Moçambique. Cada contribuição significa mais oportunidades para estudantes e investigadores desenvolverem conhecimento, inovação e soluções para o país.
+      </p>
+      <button class="btn" onclick="window.open('tel:+258849570779')">💸 Apoiar via M-Pesa: 849570779</button>
+    </div>
+    <div class="card">
+      <h3>Pedido de Cotação</h3>
+      <input id="name" placeholder="Nome">
+      <input id="email" placeholder="Email">
+      <textarea id="project" placeholder="Descreva o seu projeto"></textarea>
+      <button class="form-btn" onclick="sendForm()">Enviar</button>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACTO -->
 <section class="section contact" id="contacto">
-
-<h2 data-pt="Contacto" data-en="Contact">Contacto</h2>
-
-<p>📞 +258 84 957 0779 - Basílio Cumbane</p>
-<p>📞 +258 84 601 8537 - Admiro Guambe</p>
-<p>📧 bigdataservice.mz@gmail.com</p>
-<p>📧 bazcumbane@gmail.com</p>
-<p>📍 Maputo, Moçambique</p>
-
+  <h2 data-pt="Contacto" data-en="Contact">Contacto</h2>
+  <p>📞 +258 84 957 0779 - Basílio Cumbane</p>
+  <p>📞 +258 84 601 8537 - Admiro Guambe</p>
+  <p>📧 bigdataservice.mz@gmail.com</p>
+  <p>📧 bazcumbane@gmail.com</p>
+  <p>📍 Maputo, Moçambique</p>
 </section>
 
 <footer style="text-align:center;padding:40px;color:#64748b;">
-© 2026 BIG DATA SERVICE, SA
+  © 2026 BIG DATA SERVICE, SA
 </footer>
 
 <a class="whatsapp" href="https://wa.me/258849570779">💬</a>
 
 <script>
-
 /* TRADUÇÃO */
 let currentLang = "pt";
-
-function toggleLang(){
-currentLang = currentLang === "pt" ? "en" : "pt";
-
-document.querySelectorAll("[data-pt]").forEach(el=>{
-el.textContent = el.getAttribute("data-" + currentLang);
-});
-
-document.querySelector(".lang-btn").textContent =
-currentLang === "pt" ? "EN" : "PT";
+function toggleLang() {
+  currentLang = currentLang === "pt" ? "en" : "pt";
+  document.querySelectorAll("[data-pt]").forEach(el=>{
+    el.textContent = el.getAttribute("data-" + currentLang);
+  });
+  document.querySelector(".lang-btn").textContent = currentLang === "pt" ? "EN" : "PT";
 }
 
 /* PARTICLES */
-const canvas=document.getElementById("particles")
-const ctx=canvas.getContext("2d")
-
-canvas.width=window.innerWidth
-canvas.height=window.innerHeight
-
-let particles=[]
-
+const canvas=document.getElementById("particles"), ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+let particles=[];
 for(let i=0;i<100;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*2,
-dx:(Math.random()-0.5),
-dy:(Math.random()-0.5)
-})
+  particles.push({ x:Math.random()*canvas.width, y:Math.random()*canvas.height, r:Math.random()*2, dx:(Math.random()-0.5), dy:(Math.random()-0.5) });
 }
-
 function draw(){
-ctx.clearRect(0,0,canvas.width,canvas.height)
-
-particles.forEach(p=>{
-ctx.beginPath()
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2)
-ctx.fillStyle="#38bdf8"
-ctx.fill()
-
-p.x+=p.dx
-p.y+=p.dy
-})
-
-requestAnimationFrame(draw)
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle="#38bdf8";
+    ctx.fill();
+    p.x+=p.dx; p.y+=p.dy;
+  });
+  requestAnimationFrame(draw);
 }
-
-draw()
+draw();
 
 /* FORM */
 function sendForm(){
-
-const name=document.getElementById("name").value
-const email=document.getElementById("email").value
-const project=document.getElementById("project").value
-
-const msg=`Pedido de Cotação:
-Nome: ${name}
-Email: ${email}
-Projeto: ${project}`
-
-window.open("https://wa.me/258849570779?text="+encodeURIComponent(msg))
-window.location.href="mailto:bigdataservice.mz@gmail.com?subject=Cotação&body="+encodeURIComponent(msg)
+  const name=document.getElementById("name").value;
+  const email=document.getElementById("email").value;
+  const project=document.getElementById("project").value;
+  const msg=`Pedido de Cotação:\nNome: ${name}\nEmail: ${email}\nProjeto: ${project}`;
+  window.open("https://wa.me/258849570779?text="+encodeURIComponent(msg));
+  window.location.href="mailto:bigdataservice.mz@gmail.com?subject=Cotação&body="+encodeURIComponent(msg);
 }
-
 </script>
-
 </body>
 </html>
